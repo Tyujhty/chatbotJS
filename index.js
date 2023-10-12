@@ -69,15 +69,20 @@ document.addEventListener('DOMContentLoaded', () => {
 
         let userContainer = document.createElement("div");
         userContainer.id = "user";
-        userContainer.className = "user";
-        userContainer.innerHTML = `<span>${input}</span>`;
+        userContainer.className = "user p-2 w-full bg-[#071952] text-[#F2F7A1] rounded-md mt-2";
+        userContainer.innerHTML = `
+            <i class="fa-solid fa-user"></i>
+            <span class = "font-semibold ml-2 text-lg">${input}</span>`;
         messageContainer.appendChild(userContainer);
 
         let botContainer = document.createElement("div");
+        let botAvatar = document.createElement("i");
         let botText = document.createElement("span");
         botContainer.id = "bot";
-        botContainer.className = "bot";
+        botContainer.className = "bot p-2 w-full bg-[#35A29F] text-[#F2F7A1] rounded-md font-semibold text-lg mt-2 ";
+        botAvatar.className = "fa-solid fa-robot mr-2"
         botText.innerText = 'En train de taper...';
+        botContainer.appendChild(botAvatar);
         botContainer.appendChild(botText);
         messageContainer.appendChild(botContainer);
 
