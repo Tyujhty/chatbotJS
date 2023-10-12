@@ -4,12 +4,20 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://cdn.tailwindcss.com"></script>
+    <script src="index.js"></script>
     <title>Simple chatbot in javascript</title>
 </head>
 <body>
-    <div class="main h-screen">
+    <div class="main h-screen bg-[#F2F7A1]">
         <div class="h-full flex items-center justify-center">
-            <input type="text" id="input" placeholder="Ecrivez un message / Write a message">
+            <div class="flex flex-col items-center">
+                <img src="" alt="">
+                <label for="input" class="mb-6 font-bold text-4xl text-[#071952]">
+                    [ Un simple chatbot en Javascript ]
+                </label>
+                <input type="text" id="input" class="bg-[#088395] w-[300px]
+                h-[40px] rounded-md px-2 text-[#F2F7A1] focus:outline-none">
+            </div>
         </div>
     </div>
     
