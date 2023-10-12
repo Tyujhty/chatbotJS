@@ -1,5 +1,3 @@
-import { triggers, replies, alternatives } from "./constantes.js";
-
 document.addEventListener('DOMContentLoaded', () => {
 
     const inputField = document.querySelector('#input');
@@ -11,52 +9,85 @@ document.addEventListener('DOMContentLoaded', () => {
 
             // Récupère la valeur de l'input
             let input = inputField.value;
-            document.getElementById("user").innerHTML = input;
+            inputField.value = "";
             output(input);
         };
     });
 
     function output(input) {
-        let product;
-        let text = input.toLowerCase().replace(/[^\w\s\d]/gi, "");
-        document.getElementById('chatbot').innerHTML = product;
-        speak(product);
 
-        document.getElementById("input").value = "";
+        let product;
+
+        //Regex supprime caractères spéciaux
+        // Tous les espaces
+        // Les digitaux
+        // Les espaces vides en début et fin (trim)
+        let text = input.toLowerCase().replace(/[^\w\s\d]/gi, "").trim();
+
         text = text
             .replace(/ a /g, " ")
             .replace(/i feel /g, "")
             .replace(/whats/g, "what is")
             .replace(/please /g, "")
             .replace(/ please/g, "")
+            .replace(/r u/g, "are you");
 
-        if (compare(trigger, reply, text)) {
+        if (compare(triggers, replies, text)) {
             // recherche pour une correspondance dans trigger
-            product = compare(trigger, reply, text);
+            product = compare(triggers, replies, text);
 
-        } else if (text.match(/robot/gi)) {
-            product = robot[Math.floor(Math.random() * robot.length)];
+        } else if (text.match(/thank/gi)) {
+            product = "You're welcome !"
+
         } else {
-            product = alternative[Math.floor(Math.random() * alternative.length)];
+            product = alternatives[Math.floor(Math.random() * alternatives.length)];
         }
 
         addChat(input, product);
     }
     
-    const robot = ["How do you do Human ?"]
+    function compare(triggersArray, repliesArray, text) {
+        let reply;
+        let replyFound = false;
 
-   
+        for (let x = 0; x < triggersArray.length; x++) {
+            for (let y = 0; y < triggersArray.length; y++) {
+                if(triggersArray[x][y] === text) {
+                    let replies = repliesArray[x];
+                    reply = replies[Math.floor(Math.random()* replies.length)];
+                    replyFound = true;
 
-    function compare(triggerArray, replyArray, text) {
-        let item;
-        for (let x = 0; x < triggerArray.length; x++) {
-            for (let y = 0; y < replyArray.length; y++) {
-                if(triggerArray[x][y] === text) {
-                    items = replyArray[x];
-                    item = items[Math.floor(Math.random()* items.length)];
+                    break;
                 }
             }
         }
-        return item;
+        return reply;
     }
+
+    function addChat(input, product) {
+        const messageContainer = document.getElementById("messages");
+
+        let userContainer = document.createElement("div");
+        userContainer.id = "user";
+        userContainer.className = "user";
+        userContainer.innerHTML = `<span>${input}</span>`;
+        messageContainer.appendChild(userContainer);
+
+        let botContainer = document.createElement("div");
+        let botText = document.createElement("span");
+        botContainer.id = "bot";
+        botContainer.className = "bot";
+        botText.innerText = 'En train de taper...';
+        botContainer.appendChild(botText);
+        messageContainer.appendChild(botContainer);
+
+        messageContainer.scrollTop = messageContainer.scrollHeight - messageContainer.clientHeight;
+
+        setTimeout(() => {
+            botText.innerText = `${product}`;
+
+        }, 2000
+        )
+    }
+
 });

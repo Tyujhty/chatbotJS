@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="index.js"></script>
+    <script src="constantes.js"></script>
     <title>Simple chatbot in javascript</title>
 </head>
 <body>
@@ -17,8 +18,8 @@
                 </label>
                 <input type="text" id="input" class="bg-[#088395] w-[300px]
                 h-[40px] rounded-md px-2 text-[#F2F7A1] focus:outline-none" autocomplete="off">
-                <div>Utilisateur : <span id="user"></span></div>
-                <div>Bot : <span id="chatbot"></span></div>
+                
+                <div id="messages"></div>
             </div>
         </div>
     </div>
