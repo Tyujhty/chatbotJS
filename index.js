@@ -26,7 +26,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         text = text
             .replace(/ a /g, " ")
-            .replace(/i feel /g, "")
+            .replace(/je sens /g, "")
             .replace(/whats/g, "what is")
             .replace(/please /g, "")
             .replace(/ please/g, "")
@@ -36,8 +36,8 @@ document.addEventListener('DOMContentLoaded', () => {
             // recherche pour une correspondance dans trigger
             product = compare(triggers, replies, text);
 
-        } else if (text.match(/thank/gi)) {
-            product = "You're welcome !"
+        } else if (text.match(/merci/gi)) {
+            product = "Derien !"
 
         } else {
             product = alternatives[Math.floor(Math.random() * alternatives.length)];

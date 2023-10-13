@@ -12,7 +12,7 @@
 </head>
 <body>
     <div class="main h-screen bg-[#F2F7A1]">
-        <div class="h-full flex items-center justify-center">
+        <div class="h-full flex flex-col items-center justify-center">
             <div class="flex flex-col items-center">
                 <img src="" alt="">
                 <label for="input" class="mb-6 font-bold text-4xl text-[#071952]">
@@ -20,7 +20,8 @@
                 </label>
                 <input type="text" id="input" class="bg-[#088395] w-[300px]
                 h-[40px] rounded-md px-2 text-[#F2F7A1] focus:outline-none" autocomplete="off">
-                
+            </div>
+            <div class="w-[400px] max-h-[60%] flex items-center justify-center overflow-auto mt-8">         
                 <div id="messages" class="mt-6 w-[300px] 
                 flex flex-col items-start py-6"></div>
             </div>

@@ -1,32 +1,32 @@
 const triggers = [
-    ["hi", "hey", "hello", "good day"],
-    ["how are you", "how are things"],
-    ["what is the weather", "what's the weather"],
-    ["what is going on", "what's going on", "what's up"],
-    ["happy", "good", "great", "fine", "blessed"],
-    ["sad", "bad", "terrible"],
-    ["tell me a story", "tell me a joke"],
-    ["thanks", "thank you"],
-    ["bye", "goodbye", "good bye", "see you later"],
+    ["salut", "coucou", "bonjour", "bonne journée"],
+    ["comment ça va", "comment ça se passe"],
+    ["quel temps fait-il", "comment est le temps"],
+    ["que se passe-t-il", "quoi de neuf"],
+    ["heureux", "bien", "super", "bien", "béni"],
+    ["triste", "mal", "terrible"],
+    ["raconte-moi une histoire", "dis-moi une blague"],
+    ["merci", "merci beaucoup"],
+    ["au revoir", "à bientôt", "à la prochaine", "à plus tard"],
 ];
 
 const replies = [
-    ["Hello!", "Hi!", "Hey!", "Hi there!"],
-    ["Fine... how are you?", "Pretty well, how are you?", "Fantastic, how are you?"],
-    ["It's a beautiful day today", "It's a rainy day", "It's a sunny day"],
-    ["Nothing much", "Exciting things"],
-    ["Glad to hear it", "That's great to hear"],
-    ["Why?", "Cheer up!"],
-    ["What about ?", "Once upon a time..."]
-    ["You're welcome", "No problem"],
-    ["Bye", "See you later"],
-]
+    ["Salut !", "Salut !", "Coucou !", "Salut !"],
+    ["Ça va... et toi ?", "Plutôt bien, et toi ?", "Fantastique, et toi ?"],
+    ["Il fait beau aujourd'hui", "Il pleut", "Il fait soleil"],
+    ["Pas grand-chose", "Des choses passionnantes"],
+    ["Content de l'entendre", "C'est super à entendre"],
+    ["Pourquoi ?", "Remonte le moral !"],
+    ["Et alors ?", "Il était une fois..."]
+    ["De rien", "Pas de problème"],
+    ["Au revoir", "À plus tard"],
+];
 
 const alternatives = [
-    "Same",
-    "Try again",
-    "I don't understand",
-    "Sorry, I didn't get that",
-    "Try again",
+    " Pareil",
+    "Réessaie",
+    "Je ne comprends pas",
+    "Désolé, je n'ai pas compris ça",
+    "Réessaie",
     "Bro..."
 ]
